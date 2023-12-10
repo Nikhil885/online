@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box; 
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        } 
+        .login-link {
+          margin-top: 10px;
+      }  
+       
+       
+    </style>
+</head>
+<body> 
+     
+    <body style="background-image: url('BG.png'); background-size: cover; background-position: center;">
+<div>
+    <h2>Registration Page</h2>
+    <form id="registrationForm" onsubmit="return registerUser()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" maxlength="100" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <label for="address">Address (Max 100 characters):</label>
+        <textarea id="address" maxlength="100" required></textarea>
+
+        <label for="contact">Contact Number (10 characters):</label>
+        <input type="tel" id="contact" pattern="\d{10}" required>
+
+        <button type="submit">Register</button> &nbsp; <button type="reset">Reset</button> 
+        <div class="login-link">
+          <a href="login.html">Already Have an Account? Login</a>
+      </div>
+    </form>
+</div>
+
+<script>
+    function registerUser() {
+        // Perform basic client-side validation
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var address = document.getElementById("address").value;
+        var contact = document.getElementById("contact").value;
+
+        if (name.trim() === "" || email.trim() === "" || password.trim() === "" || address.trim() === "" || contact.trim() === "") {
+            alert("All fields are required");
+            return false;
+        }
+
+        // Assume that registration is successful, generate a random customer ID
+        var customerId = generateRandomCustomerId();
+
+        // Display registration acknowledgment
+        var acknowledgmentMessage = "Registration Successful!\n\n" +
+                                   "Customer ID: " + customerId + "\n" +
+                                   "Name: " + name + "\n" +
+                                   "Email: " + email;
+
+        alert(acknowledgmentMessage);
+
+        // Prevent the form from submitting
+        return false;
+    }
+
+    function generateRandomCustomerId() {
+        // Simple function to generate a random customer ID (for demonstration purposes)
+        return Math.floor(Math.random() * 1000000) + 1;
+    } 
+    <footer>
+        <p>&copy; 2023 Online Grocery Ordering</p>
+      </footer>
+</script>
+
+</body>
+</html>
