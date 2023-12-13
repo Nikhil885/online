@@ -1,1 +1,61 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cart.css">
+  <title>Shopping Cart</title>
+</head>
+<body>
+
+  <!-- Header with Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li> 
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Shopping Cart -->
+  <div class="cart-container">
+    <div class="cart-item" id="item1">
+      <img src="p1.jpg" alt="Product 1">
+      <div class="item-details">
+        <h3>Product 1</h3>
+        <p class="price">$19.99</p>
+      </div>
+      <div class="quantity-controls">
+        <button onclick="decrementQuantity('item1')">-</button>
+        <span id="quantity1">1</span>
+        <button onclick="incrementQuantity('item1')">+</button>
+      </div>
+    </div>
+
+    <!-- Add more cart items as needed --> 
+     
+      <div class="cart-item" id="item1">
+        <img src="p1.jpg" alt="Product 1">
+        <div class="item-details">
+          <h3>Product 1</h3>
+          <p class="price">$19.99</p>
+        </div>
+        <div class="quantity-controls">
+          <button onclick="decrementQuantity('item1')">-</button>
+          <span id="quantity1">1</span>
+          <button onclick="incrementQuantity('item1')">+</button>
+        </div>
+       
+
+    <div class="cart-total">
+      <p>Total: $19.99</p>
+      <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
